@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="label"
+                type="String"/>
+
+        <variable
+                name="showLine"
+                type="boolean"/>
+
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <me.grantland.widget.AutofitTextView
+                android:id="@+id/valueTV"
+                android:layout_width="@dimen/ybar_label_width"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:text="@{label+``}"
+                android:textColor="@color/grey_400"
+                tools:text="400"/>
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/red"
+                android:visibility="@{showLine?View.VISIBLE:View.GONE}"/>
+
+
+    </LinearLayout>
+</layout>

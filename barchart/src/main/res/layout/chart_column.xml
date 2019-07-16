@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="columnBG"
+                type="android.graphics.drawable.Drawable"/>
+
+        <variable
+                name="model"
+                type="com.widget.barchart.chart.ChartModel"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/parent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical"
+            bind:layout_marginEnd="@{model.barGap}"
+            bind:layout_marginStart="@{model.barGap}">
+
+        <TextView
+                android:id="@+id/chartItem"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@{columnBG!=null?columnBG:@drawable/bg_gradient_primary}"
+                bind:carbon_cornerRadius="8dp"
+                bind:layout_height="@{model.absoluteValue}"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/ybar_label_height"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@{model.label}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"/>
+    </LinearLayout>
+</layout>

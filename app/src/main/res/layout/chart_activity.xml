@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/chartContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.widget.barchart.chart.BarChartView
+                android:id="@+id/chartView"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_margin="10dp"
+                app:column_background="@drawable/bg_button_gradient_primary_color"
+                app:column_label_color="@color/grey_300"
+                app:gap="12dp"
+                app:showLines="true"
+                app:x_line_color="@color/grey_300"/>
+    </RelativeLayout>
+</layout>

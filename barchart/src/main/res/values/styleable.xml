@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BarChartView">
+        <attr name="column_background" format="reference"/>
+        <attr name="column_label_color" format="reference"/>
+        <attr name="x_line_color" format="reference"/>
+        <attr name="gap" format="dimension"/>
+        <attr name="showLines" format="boolean"/>
+        <attr name="rowsNum" format="integer"/>
+    </declare-styleable>
+</resources>

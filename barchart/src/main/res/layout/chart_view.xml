@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="maxColumnValue"
+                type="int"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:carbon_cornerRadius="@dimen/_8sdp">
+
+        <include
+                android:id="@+id/maxValueLayout"
+                layout="@layout/chart_bar"
+                bind:label="@{maxColumnValue+``}"/>
+
+        <RelativeLayout
+                android:id="@+id/parentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/maxValueLayout"
+                android:background="@color/white">
+
+            <FrameLayout
+                    android:id="@+id/xAxisContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/chartRecycler"
+                    android:layout_width="match_parent"
+                    android:scrollbars="horizontal"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/ybar_label_width"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
