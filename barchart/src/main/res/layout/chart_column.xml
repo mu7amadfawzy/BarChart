@@ -24,7 +24,7 @@
             bind:layout_marginEnd="@{model.barGap}"
             bind:layout_marginStart="@{model.barGap}">
 
-        <TextView
+        <carbon.widget.TextView
                 android:id="@+id/chartItem"
                 android:layout_width="@dimen/_15sdp"
                 android:layout_height="wrap_content"

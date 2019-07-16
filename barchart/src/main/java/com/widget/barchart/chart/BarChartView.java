@@ -104,12 +104,12 @@ public class BarChartView extends RelativeLayout {
     }
 
     public void drawChart(List<BarChartModel> columnsBars) {
-        drawChart(columnsBars, 0);
+        drawChart(columnsBars, -1);
     }
+
     public void drawChart(List<BarChartModel> columnsBars, List<BarChartModel> rowsBars) {
-        this.columnsBars = new ArrayList<>(columnsBars);
         this.rowsBars = new ArrayList<>(rowsBars);
-        setMaxValue();
+        drawChart(columnsBars);
     }
 
     public void drawChart(List<BarChartModel> columnsBars, int rowsNumber) {
@@ -141,12 +141,14 @@ public class BarChartView extends RelativeLayout {
     }
 
     private void handleRows() {
-        if (rowsNumber == -1)//in case rowsModelList was provided
+        if (rowsBars != null && !rowsBars.isEmpty())//in case rowsModelList was provided
             addRows();
         else generateRows(rowsNumber);
     }
 
     private void generateRows(int rowsNumber) {
+        if (rowsNumber <= 0)
+            return;
         rowsBars = new ArrayList<>();
         rowsBars.add(new BarChartModel(Math.round(maxColumnValue)));//the top bar
         rowsBars.add(new BarChartModel(0));// the bottom bar

@@ -38,7 +38,7 @@
                     android:id="@+id/chartRecycler"
                     android:layout_width="match_parent"
                     android:scrollbars="horizontal"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:paddingStart="@{showPercentages?@dimen/ybar_label_width:0f}"/>
         </RelativeLayout>
     </RelativeLayout>

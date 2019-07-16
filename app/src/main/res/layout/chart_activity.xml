@@ -5,14 +5,13 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
+
     >
 
         <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
-                app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
         <androidx.core.widget.NestedScrollView
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -31,7 +30,7 @@
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
                         app:column_background="@drawable/bg_gradient_primary"
-                        app:column_label_color="@color/grey_300"
+                        app:column_label_color="@color/colorPrimaryDark"
                         app:gap="5dp"
                         app:showLines="true"
                         app:x_line_color="@color/grey_300"/>
@@ -46,6 +45,16 @@
                         app:column_color="@color/colorAccent"
                         app:showLines="false"
                         app:showPercentages="false"/>
+                <com.widget.barchart.chart.BarChartView
+                        android:id="@+id/chartView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        app:column_label_color="@color/grey_400"
+                        app:gap="12dp"
+                        app:column_color="@color/blue"
+                        app:x_line_color="@color/grey_300"
+                       />
             </LinearLayout>
 
 
