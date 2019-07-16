@@ -21,6 +21,7 @@ public class ChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.chart_activity);
         initDummyData();
+        initDummyData2();
     }
 
     private void initDummyData() {
@@ -34,4 +35,14 @@ public class ChartActivity extends AppCompatActivity {
         binding.chartView.drawChart(columnsModelList, 4);
     }
 
+    private void initDummyData2() {
+        List<BarChartModel> columnsModelList = new ArrayList<>();
+        List<BarChartModel> rowsModelList = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            columnsModelList.add(new BarChartModel(DateFormatUtil.getMonthByNumber(i), i * 50));
+            rowsModelList.add(new BarChartModel("" + i * 30, i * 30));
+        }
+        binding.chartView2.drawChart(columnsModelList);
+    }
 }

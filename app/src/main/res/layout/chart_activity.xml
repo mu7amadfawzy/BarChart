@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <RelativeLayout
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+    >
 
-        <FrameLayout
-                android:id="@+id/chartContainer"
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+        <androidx.core.widget.NestedScrollView
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <com.widget.barchart.chart.BarChartView
-                android:id="@+id/chartView"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_margin="10dp"
-                app:column_background="@drawable/bg_button_gradient_primary_color"
-                app:column_label_color="@color/grey_300"
-                app:gap="12dp"
-                app:showLines="true"
-                app:x_line_color="@color/grey_300"/>
-    </RelativeLayout>
+
+                <com.widget.barchart.chart.BarChartView
+                        android:id="@+id/chartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        app:column_background="@drawable/bg_gradient_primary"
+                        app:column_label_color="@color/grey_300"
+                        app:gap="5dp"
+                        app:showLines="true"
+                        app:x_line_color="@color/grey_300"/>
+
+                <com.widget.barchart.chart.BarChartView
+                        android:id="@+id/chartView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        app:column_label_color="@color/black"
+                        app:gap="12dp"
+                        app:column_color="@color/colorAccent"
+                        app:showLines="false"
+                        app:showPercentages="false"/>
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
 </layout>

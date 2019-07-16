@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:bind="http://schemas.android.com/tools">
 
     <data>
@@ -8,12 +7,15 @@
         <variable
                 name="maxColumnValue"
                 type="int"/>
+        <variable
+                name="showPercentages"
+                type="boolean"/>
     </data>
 
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:carbon_cornerRadius="@dimen/_8sdp">
+    >
 
         <include
                 android:id="@+id/maxValueLayout"
@@ -30,14 +32,14 @@
             <FrameLayout
                     android:id="@+id/xAxisContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content"/>
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/chartRecycler"
                     android:layout_width="match_parent"
                     android:scrollbars="horizontal"
-                    android:layout_height="match_parent"
-                    android:paddingStart="@dimen/ybar_label_width"/>
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@{showPercentages?@dimen/ybar_label_width:0f}"/>
         </RelativeLayout>
     </RelativeLayout>
 </layout>

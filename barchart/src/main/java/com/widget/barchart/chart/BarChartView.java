@@ -41,9 +41,10 @@ public class BarChartView extends RelativeLayout {
     private ViewTreeObserver.OnGlobalLayoutListener layoutListener;
     private int parentHeight = -1;
     private float maxColumnValue;
-    private boolean showLines;
+    private boolean showLines, showPercentages;
     private TypedArray attributesArray;
     private Drawable column_background;
+    private int columnColor;
     private int column_label_color, x_line_color;
     private float gap;
     private int rowsNumber = -1;
@@ -67,10 +68,12 @@ public class BarChartView extends RelativeLayout {
     private void initAttributes(Context context, AttributeSet attrs) {
         attributesArray = context.obtainStyledAttributes(attrs, R.styleable.BarChartView);
         column_background = attributesArray.getDrawable(R.styleable.BarChartView_column_background);
+        columnColor = attributesArray.getColor(R.styleable.BarChartView_column_color, 0);
         column_label_color = attributesArray.getColor(R.styleable.BarChartView_column_label_color, Color.BLACK);
         x_line_color = attributesArray.getColor(R.styleable.BarChartView_x_line_color, Color.BLACK);
         gap = attributesArray.getDimension(R.styleable.BarChartView_gap, getResources().getDimension(R.dimen._5sdp));
         showLines = attributesArray.getBoolean(R.styleable.BarChartView_showLines, false);
+        showPercentages = attributesArray.getBoolean(R.styleable.BarChartView_showPercentages, false);
     }
 
     public void createView(Context context) {
@@ -80,13 +83,14 @@ public class BarChartView extends RelativeLayout {
     private void renderView(LayoutInflater inflater, ViewGroup container) {
         binding = DataBindingUtil.inflate(inflater, R.layout.chart_view, container, true);
         binding.maxValueLayout.valueTV.setTextColor(x_line_color);
+        binding.setShowPercentages(showPercentages);
         calculateParentHeight();
         setColumnsRecycler();
     }
 
     private void setColumnsRecycler() {
         binding.chartRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        adapter = new BarsAdapter(new ArrayList<>(), column_background, column_label_color);
+        adapter = new BarsAdapter(new ArrayList<>(), column_background, column_label_color, columnColor);
         binding.chartRecycler.setAdapter(adapter);
     }
 
@@ -99,6 +103,9 @@ public class BarChartView extends RelativeLayout {
         binding.parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(layoutListener);
     }
 
+    public void drawChart(List<BarChartModel> columnsBars) {
+        drawChart(columnsBars, 0);
+    }
     public void drawChart(List<BarChartModel> columnsBars, List<BarChartModel> rowsBars) {
         this.columnsBars = new ArrayList<>(columnsBars);
         this.rowsBars = new ArrayList<>(rowsBars);
@@ -181,6 +188,7 @@ public class BarChartView extends RelativeLayout {
                 , R.layout.chart_bar, container, true);
         barBinding.setLabel(chartModel.getGivenValue() + "");
         barBinding.setShowLine(showLines);
+        barBinding.setShowPercentages(showPercentages);
         if (x_line_color != 0) {
             barBinding.line.setBackgroundColor(x_line_color);
             barBinding.valueTV.setTextColor(x_line_color);

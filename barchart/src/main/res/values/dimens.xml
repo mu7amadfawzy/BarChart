@@ -2,4 +2,5 @@
 <resources>
     <dimen name="ybar_label_width">@dimen/_20sdp</dimen>
     <dimen name="ybar_label_height">@dimen/_20sdp</dimen>
+    <dimen name="barTitle">@dimen/_12ssp</dimen>
 </resources>

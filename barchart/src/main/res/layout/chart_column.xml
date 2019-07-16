@@ -7,7 +7,9 @@
         <variable
                 name="columnBG"
                 type="android.graphics.drawable.Drawable"/>
-
+        <variable
+                name="columnColor"
+                type="int"/>
         <variable
                 name="model"
                 type="com.widget.barchart.chart.ChartModel"/>
@@ -22,13 +24,13 @@
             bind:layout_marginEnd="@{model.barGap}"
             bind:layout_marginStart="@{model.barGap}">
 
-        <carbon.widget.TextView
+        <TextView
                 android:id="@+id/chartItem"
                 android:layout_width="@dimen/_15sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
-                android:background="@{columnBG!=null?columnBG:@drawable/bg_gradient_primary}"
-                bind:carbon_cornerRadius="4dp"
+                bind:bg_drawable="@{columnBG}"
+                bind:bg_color="@{columnColor}"
                 bind:layout_height="@{model.absoluteValue}"/>
 
         <TextView
@@ -39,6 +41,6 @@
                 android:singleLine="true"
                 android:text="@{model.label}"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"/>
+                android:textSize="@dimen/barTitle"/>
     </LinearLayout>
 </layout>
