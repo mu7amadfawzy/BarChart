@@ -33,6 +33,7 @@
                         app:column_label_color="@color/colorPrimaryDark"
                         app:gap="5dp"
                         app:showLines="true"
+                        app:showPercentages="true"
                         app:x_line_color="@color/grey_300"/>
 
                 <com.widget.barchart.chart.BarChartView
@@ -52,9 +53,11 @@
                         android:layout_margin="10dp"
                         app:column_label_color="@color/grey_400"
                         app:gap="12dp"
+                        app:showLines="true"
+                        app:showPercentages="true"
                         app:column_color="@color/blue"
                         app:x_line_color="@color/grey_300"
-                       />
+                />
             </LinearLayout>
 
 

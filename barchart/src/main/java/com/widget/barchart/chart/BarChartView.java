@@ -35,6 +35,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 
 public class BarChartView extends RelativeLayout {
+    private static final short DEFAULT_COLUMN_MAX_VALUE = 100;
     private ArrayList<BarChartModel> columnsBars, rowsBars;
     private ChartViewBinding binding;
     private BarsAdapter adapter;
@@ -98,7 +99,7 @@ public class BarChartView extends RelativeLayout {
         layoutListener = () -> {
             parentHeight = binding.parentLayout.getHeight();
             binding.parentLayout.getViewTreeObserver().removeOnGlobalLayoutListener(layoutListener);
-            draw();
+//            draw();
         };
         binding.parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(layoutListener);
     }
@@ -109,7 +110,7 @@ public class BarChartView extends RelativeLayout {
 
     public void drawChart(List<BarChartModel> columnsBars, List<BarChartModel> rowsBars) {
         this.rowsBars = new ArrayList<>(rowsBars);
-        drawChart(columnsBars);
+        drawChart(columnsBars, -1);
     }
 
     public void drawChart(List<BarChartModel> columnsBars, int rowsNumber) {
@@ -127,7 +128,7 @@ public class BarChartView extends RelativeLayout {
                 .subscribe(integer -> {
                     maxColumnValue = integer;
                     if (maxColumnValue <= 0)
-                        maxColumnValue = 400;
+                        maxColumnValue = DEFAULT_COLUMN_MAX_VALUE;
                     binding.setMaxColumnValue(Math.round(maxColumnValue));
                     draw();
                 });

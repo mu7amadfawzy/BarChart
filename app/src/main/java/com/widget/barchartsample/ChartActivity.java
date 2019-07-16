@@ -44,7 +44,7 @@ public class ChartActivity extends AppCompatActivity {
             columnsModelList.add(new BarChartModel(DateFormatUtil.getMonthByNumber(i), i * 50));
             rowsModelList.add(new BarChartModel("" + i * 30, i * 30));
         }
-        binding.chartView2.drawChart(columnsModelList);
+        binding.chartView2.drawChart(columnsModelList, 5);
     }
     private void initDummyData3() {
         List<BarChartModel> columnsModelList = new ArrayList<>();
