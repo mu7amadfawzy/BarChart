@@ -22,13 +22,13 @@
             bind:layout_marginEnd="@{model.barGap}"
             bind:layout_marginStart="@{model.barGap}">
 
-        <TextView
+        <carbon.widget.TextView
                 android:id="@+id/chartItem"
                 android:layout_width="@dimen/_15sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:background="@{columnBG!=null?columnBG:@drawable/bg_gradient_primary}"
-                bind:carbon_cornerRadius="8dp"
+                bind:carbon_cornerRadius="4dp"
                 bind:layout_height="@{model.absoluteValue}"/>
 
         <TextView
