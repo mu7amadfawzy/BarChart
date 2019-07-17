@@ -19,7 +19,7 @@
 
         <include
                 android:id="@+id/maxValueLayout"
-                layout="@layout/chart_bar"
+                layout="@layout/chart_row"
                 bind:label="@{maxColumnValue+``}"
                 bind:showPercentages='@{true}'/>
 
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:scrollbars="horizontal"
                     android:layout_height="match_parent"
-                    android:paddingStart="@{showPercentages?@dimen/ybar_label_width:0f}"/>
+                    android:paddingStart="@{showPercentages?@dimen/row_label_width:0f}"/>
         </RelativeLayout>
     </RelativeLayout>
 </layout>

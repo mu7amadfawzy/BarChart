@@ -25,20 +25,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <me.grantland.widget.AutofitTextView
+        <TextView
                 android:id="@+id/valueTV"
-                android:layout_width="@dimen/ybar_label_width"
+                android:layout_width="@dimen/row_label_width"
                 android:singleLine="true"
                 android:layout_height="wrap_content"
                 android:visibility="@{showPercentages?View.VISIBLE:View.GONE}"
                 android:text="@{label+``}"
+                android:textSize="@dimen/barTitle"
                 android:textColor="@color/grey_400"
                 tools:text="400"/>
 
         <View
                 android:id="@+id/line"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
+                android:layout_height="@dimen/row_line_height"
                 android:background="@color/red"
                 android:visibility="@{showLine?View.VISIBLE:View.GONE}"/>
 

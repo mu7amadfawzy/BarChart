@@ -17,7 +17,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.widget.barchart.R;
-import com.widget.barchart.databinding.ChartBarBinding;
+import com.widget.barchart.databinding.ChartRowBinding;
 import com.widget.barchart.databinding.ChartViewBinding;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -187,8 +187,8 @@ public class BarChartView extends RelativeLayout {
     }
 
     private void inflateRowView(FrameLayout container, ChartModel chartModel) {
-        ChartBarBinding barBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext())
-                , R.layout.chart_bar, container, true);
+        ChartRowBinding barBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext())
+                , R.layout.chart_row, container, true);
         barBinding.setLabel(chartModel.getGivenValue() + "");
         barBinding.setShowLine(showLines);
         barBinding.setShowPercentages(showPercentages);
@@ -214,7 +214,7 @@ public class BarChartView extends RelativeLayout {
     }
 
     private float getYBarLabelHeight() {
-        return getResources().getDimension(R.dimen.ybar_label_height);
+        return getResources().getDimension(R.dimen.row_label_height);
     }
 
 }

@@ -26,7 +26,7 @@
 
         <TextView
                 android:id="@+id/chartItem"
-                android:layout_width="@dimen/_15sdp"
+                android:layout_width="@dimen/column_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 bind:bg_drawable="@{columnBG}"
@@ -36,7 +36,7 @@
         <TextView
                 android:id="@+id/title"
                 android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/ybar_label_height"
+                android:layout_height="@dimen/row_label_height"
                 android:gravity="center"
                 android:singleLine="true"
                 android:textDirection="locale"
