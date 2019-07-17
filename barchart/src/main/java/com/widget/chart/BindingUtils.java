@@ -1,4 +1,4 @@
-package com.widget.barchart.chart;
+package com.widget.chart;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;

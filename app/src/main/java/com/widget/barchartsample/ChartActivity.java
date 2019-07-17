@@ -3,8 +3,8 @@ package com.widget.barchartsample;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import com.widget.barchart.chart.BarChartModel;
 import com.widget.barchartsample.databinding.ChartActivityBinding;
+import com.widget.chart.BarChartModel;
 
 import java.util.ArrayList;
 import java.util.List;

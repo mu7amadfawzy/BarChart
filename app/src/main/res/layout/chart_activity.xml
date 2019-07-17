@@ -24,7 +24,7 @@
                     android:layout_height="match_parent">
 
 
-                <com.widget.barchart.chart.BarChartView
+                <com.widget.chart.BarChartView
                         android:id="@+id/chartView"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
@@ -36,7 +36,7 @@
                         app:showPercentages="true"
                         app:x_line_color="@color/grey_300"/>
 
-                <com.widget.barchart.chart.BarChartView
+                <com.widget.chart.BarChartView
                         android:id="@+id/chartView2"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
@@ -46,7 +46,7 @@
                         app:column_color="@color/colorAccent"
                         app:showLines="false"
                         app:showPercentages="true"/>
-                <com.widget.barchart.chart.BarChartView
+                <com.widget.chart.BarChartView
                         android:id="@+id/chartView3"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"

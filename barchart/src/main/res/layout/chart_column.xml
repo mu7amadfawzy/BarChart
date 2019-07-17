@@ -12,7 +12,7 @@
                 type="int"/>
         <variable
                 name="model"
-                type="com.widget.barchart.chart.ChartModel"/>
+                type="com.widget.chart.ChartModel"/>
     </data>
 
     <LinearLayout

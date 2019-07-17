@@ -1,4 +1,4 @@
-package com.widget.barchart.chart;
+package com.widget.chart;
 
 /**
  * Created by Fawzy on 02,April,2019
