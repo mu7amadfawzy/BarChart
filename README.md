@@ -1,7 +1,7 @@
 # ExpandableLayout
 [ ![Download](https://api.bintray.com/packages/ma7madfawzy/expandableLayout/com.widget.expandableLayout/images/download.svg) ](https://bintray.com/ma7madfawzy/expandableLayout/com.widget.expandableLayout/_latestVersion)
 
-An Android library that lets you create an expandable layout in a simple and easy way in which you can use the default header and content OR pass your custom layout and just expand and collapse magic is all ready.
+An Android library that lets you create a BarChartView in a simple flexible and easy way .
 
 ![sample](images/Demo2.gif)r
 
@@ -12,15 +12,15 @@ An Android library that lets you create an expandable layout in a simple and eas
 #### Using Gradle
 ```
 dependencies {
-implementation  'com.widget:expandableLayout:3+'
+implementation  'com.widget.barchart:2+'
 }
 ```
 #### Using Maven
 ```
 <dependency>
   <groupId>com.widget</groupId>
-  <artifactId>expandableLayout</artifactId>
-  <version>3+</version>
+  <artifactId>barchart</artifactId>
+  <version>2+</version>
   <type>pom</type>
 </dependency>
 
@@ -30,121 +30,66 @@ implementation  'com.widget:expandableLayout:3+'
 ### 2.1 XML Layout:
 
  ```
-<widget.com.expandablelayout.ExpandableLayout
- android:layout_width="match_parent"
- android:layout_height="wrap_content"
- <!--expand/collabse duration ,default 300-->
- app:duration="400"
- <!--default false-->
- app:hideArrow="true"
- app:arrow_icon="@drawable/arrow_down"
- app:header_padding="16dp"
- app:content_padding="10dp"
- <!--default false-->
- app:startExpanded="true"
-  <!--default 0-->
- app:pinnedLineHeight="15dp"
- <!--use your own custom layout-->
- app:content_layout="@layout/custom_content"
- app:header_layout="@layout/layout_expandable_header"
- <!--Or use default layout which is a TextView-->
- app:exp_title="Header default Text sample"
- app:exp_content="Content Text Sample"
- <!--fonts is the folder name in Assets-->
- app:header_font="fonts/fontName.ttf"
- app:content_font="fonts/fontName.ttf"'
- app:header_color="@color/colorAccentDark"
- app:content_color="@color/colorAccent"
- app:header_padding="10dp"
- app:content_padding="14dp"
- app:header_text_style="italic"
- app:content_style="bold"/> 
+ <com.widget.barchart.chart.BarChartView
+    android:id="@+id/chartView"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="10dp"
+    <!--defines chart column background drawable-->
+    app:column_background="@drawable/bg_gradient_primary"
+     <!--or set chart column background color-->
+    app:column_color="@color/colorAccent"
+     <!--defines column label text color-->
+    app:column_label_color="@color/colorPrimaryDark"
+    <!--defines Space between columns-->
+    app:gap="5dp"
+     <!--shows x-coordinates-->
+    app:showLines="true"
+     <!--shows x-coordinates values-->
+    app:showPercentages="true"
+    <!--shows x-coordinates color (label and line)-->
+    app:x_line_color="@color/grey_300"/>
 
 ```
 #### You can use the default HeaderTV and ContentTV:
 
 ##### ````exp_title```` sets the text of the headerTV .
-##### ````header_color```` sets the textColor of the headerTV.
-##### ````arrow_icon```` sets the resource of the arrowBtn (which is visible with using the default headerTV). 
-
-##### ````content````   sets the text of the contentTV.
-##### ````content_color```` sets the textColor of the contentTV.
-
-##### ````duration```` sets the duration of the collabse and expand animation.
-
-#### Or you can use set a custom header or a custom content:
-
-##### ````header_layout````   sets the declared layout resource as the header layout.
-##### ````content_layout```` sets the declared layout resource as the content layout.
-
-##### ````pinnedLineHeight```` define collapsed content minimum height.
-
-#### Use ```toggle()``` to reverse the state, and use isExpanded() to check if it was expanded or not.
-
-#### Use ```refresh()``` to remain the state(in case expanded while custom content includes RecyclerView whose data were updated         then trigging refresh() will help the expandable sets the expand height well).
-
-#### ```setOnExpandedListener``` that can be used to listen to state change:
-````
-expandableLayout.setOnExpandedListener(new OnExpandedListener() {
-    @Override
-    public void onExpandChanged(View view, boolean isExpanded) {
-        //TODO handle onExpandChanged
-    }
-});
-````
 
 ### 2.2 Dynamically:
 
 #### In Java:
+#### BarChartModel constructors takes label and the percent needed
+````
+ public BarChartModel(String label, int percent) {
+        this.label = label;
+        this.percent = percent;
+    }
 
-##### Default HeaderTV and ContentTV
-````
- ExpandableLayout expandableLayout = new ExpandableLayout(context)
-                .setHeaderTitle("Added By Java", Color.BLACK)
-                .setDefaultContent("Content xxx", Color.BLUE)
-                .setArrowDrawable(ContextCompat.getDrawable(this, R.drawable.arrow_down));
-````
-
-##### Custom HeaderTV OR ContentTV
-````
-expandableLayout.setHeaderLayout(R.layout.custom_header);
-                .setContentLayout(R.layout.custom_content);
-````
-#### In Kotlin:
-
-##### Default HeaderTV and ContentTV
-````
-var expandableLayout = ExpandableLayout(context)
-                 .setDefaultHeaderTitle("Added Through Kotlin")
-                 .setDefaultContentTitle("Content xxx")
-                 .setArrowDrawable(R.drawable.arrow_ic)
+    public BarChartModel(int percent) {
+        this.percent = percent;
+    }
 ````
 
-##### Custom HeaderTV OR ContentTV
+##### Invoke drawChart wich can deal with different params:
 ````
-expandableLayout.setHeaderLayout(R.layout.custom_header)
-                .setContentLayout(R.layout.custom_content)
+List<BarChartModel> columnsModelList = new ArrayList<>();
+    for (int i = 2; i <= 10; i++) {
+          columnsModelList.add(new BarChartModel("Label: "+i, i * 50));
+          rowsModelList.add(new BarChartModel("" + i * 50, i * 50));
+        }
 ````
-##### Adding the layout to container view
+###### With clumnModelList and required x-coordinates number:
 ````
-container.addView(expandableLayout)
+chartView.drawChart(columnsModelList, 4);// 4 is the required x-coordinates number which will be drawn with equaled                gap.
 ````
-##### Then you can trigger your custom layouts using:
-###### For DataBinding lovers 
+###### With clumnModelList and rowsModelList:
 ````
-expandable.getHeaderLayoutBinding();//returns ViewDataBinding which can be cast to your layout binding Impl class
-expandable.getContentLayoutBinding();
+List<BarChartModel> rowsModelList = new ArrayList<>();
+chartView.drawChart(columnsModelList, rowsModelList);// rowsModelList of type rowsModelList represents 
 ````
-###### Or just a simple view
+###### With clumnModelList only:
 ````
-expandable.getHeaderLayoutView();
-expandable.getContentLayoutView();
-````
-### 2.3 In RecyclerView:
-#### In order to setup using in RecyclerView call ```ExpandableLayout.onAttachedToRecycler()``` before binding items of the Adapter.
-##### In order to enable one expanded per time in recyclerViewAdaper.onBind() call ``` setRecyclerItem(linearLayoutManager,itemPosition)``` with the RecyclerView's layoutManger(weather ```GridLayoutManager``` or ```LinearLayoutManager```)
-````
-expandable.setRecyclerItem(linearLayoutManager, getAdapterPosition());
+   chartView.drawChart(columnsModelList);// it's like with 0 x-coordinates number .
 ````
 
 ### Happy Coding
