@@ -18,7 +18,7 @@ ext {
     //library name will be like -> publishedGroupId:artifact:libraryVersion
     publishedGroupId = 'com.widget'             //the ID you want to add in the 'implementation line'
     artifact = 'barChart'               //the artifact you want to add in the 'implementation line'
-    libraryVersion = '1.1.0'
+    libraryVersion = '2.0.0'
     libraryDescription = 'An Android library that lets you create ChartView in which you can set your bar and column numbers and manage colorsand gap between them in a simple and fast way.'
 
     siteUrl = 'https://github.com/ma7madfawzy/BarChart'
@@ -40,7 +40,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
-        versionName "1.1.0"
+        versionName "2.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

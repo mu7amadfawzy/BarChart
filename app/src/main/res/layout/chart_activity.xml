@@ -45,7 +45,7 @@
                         app:gap="12dp"
                         app:column_color="@color/colorAccent"
                         app:showLines="false"
-                        app:showPercentages="false"/>
+                        app:showPercentages="true"/>
                 <com.widget.barchart.chart.BarChartView
                         android:id="@+id/chartView3"
                         android:layout_width="match_parent"
