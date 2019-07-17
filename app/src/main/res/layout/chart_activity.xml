@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-    >
-
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
         <androidx.core.widget.NestedScrollView
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:background="@color/grey_300"
+                android:layout_height="wrap_content"
         >
             <LinearLayout
                     android:orientation="vertical"
@@ -32,6 +21,8 @@
                         app:column_background="@drawable/bg_gradient_primary"
                         app:column_label_color="@color/colorPrimaryDark"
                         app:gap="5dp"
+                        android:padding="4dp"
+                        android:background="@color/white"
                         app:showLines="true"
                         app:showPercentages="true"
                         app:x_line_color="@color/grey_300"/>
@@ -43,25 +34,25 @@
                         android:layout_margin="10dp"
                         app:column_label_color="@color/black"
                         app:gap="12dp"
-                        app:column_color="@color/colorAccent"
+                        android:background="@color/white"
+                        app:column_background="@drawable/bg_gradient"
                         app:showLines="false"
                         app:showPercentages="true"/>
                 <com.widget.chart.BarChartView
                         android:id="@+id/chartView3"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_height="250dp"
                         android:layout_margin="10dp"
                         app:column_label_color="@color/grey_400"
                         app:gap="12dp"
                         app:showLines="true"
+                        android:background="@color/white"
                         app:showPercentages="true"
-                        app:column_color="@color/blue"
-                        app:x_line_color="@color/grey_300"
+                        app:column_color="@color/colorPrimary"
+                        app:x_line_color="@color/grey_400"
                 />
             </LinearLayout>
 
 
         </androidx.core.widget.NestedScrollView>
-    </LinearLayout>
-
 </layout>

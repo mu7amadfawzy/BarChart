@@ -40,7 +40,7 @@ public class ChartActivity extends AppCompatActivity {
         List<BarChartModel> columnsModelList = new ArrayList<>();
         List<BarChartModel> rowsModelList = new ArrayList<>();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 3; i <= 10; i++) {
             columnsModelList.add(new BarChartModel(DateFormatUtil.getMonthByNumber(i), i * 50));
             rowsModelList.add(new BarChartModel("" + i * 30, i * 30));
         }
@@ -50,7 +50,7 @@ public class ChartActivity extends AppCompatActivity {
         List<BarChartModel> columnsModelList = new ArrayList<>();
         List<BarChartModel> rowsModelList = new ArrayList<>();
 
-        for (int i = 3; i <= 8; i++) {
+        for (int i = 4; i <= 9; i++) {
             columnsModelList.add(new BarChartModel(DateFormatUtil.getMonthByNumber(i), i * 50));
             rowsModelList.add(new BarChartModel("" + i * 10, i * 10));
         }

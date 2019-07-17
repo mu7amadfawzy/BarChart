@@ -20,14 +20,15 @@
         <include
                 android:id="@+id/maxValueLayout"
                 layout="@layout/chart_bar"
-                bind:label="@{maxColumnValue+``}"/>
+                bind:label="@{maxColumnValue+``}"
+                bind:showPercentages='@{true}'/>
 
         <RelativeLayout
                 android:id="@+id/parentLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/maxValueLayout"
-                android:background="@color/white">
+        >
 
             <FrameLayout
                     android:id="@+id/xAxisContainer"
