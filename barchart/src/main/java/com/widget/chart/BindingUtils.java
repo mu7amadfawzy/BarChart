@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,10 +35,10 @@ public class BindingUtils {
     }
 
     @BindingAdapter("bg_color")
-    public static void setBgColor(View view, int colorRes) {
+    public static void setBgColor(CardView view, int colorRes) {
         if (colorRes == 0)
             return;
-        view.setBackgroundColor(colorRes);
+        view.setCardBackgroundColor(colorRes);
     }
 
     @BindingAdapter("bg_drawable")

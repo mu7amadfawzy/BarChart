@@ -66,11 +66,10 @@ public class BarsAdapter extends RecyclerView.Adapter<BarsAdapter.ViewHolder> {
         }
 
         public void bind(int position) {
+            binding.setModel(dataList.get(position));
             binding.title.setTextColor(columnLabelColor);
-            binding.title.setSelected(true);
             binding.setColumnColor(columnColor);
             binding.setColumnBG(columnBG);
-            this.binding.setModel(dataList.get(position));
         }
 
     }
