@@ -1,5 +1,5 @@
-# ExpandableLayout
-[ ![Download](https://api.bintray.com/packages/ma7madfawzy/expandableLayout/com.widget.expandableLayout/images/download.svg) ](https://bintray.com/ma7madfawzy/expandableLayout/com.widget.expandableLayout/_latestVersion)
+# BarChartView
+[ ![Download](https://api.bintray.com/packages/ma7madfawzy/BarChart/com.widget.barchart/images/download.svg) ](https://bintray.com/ma7madfawzy/BarChart/com.widget.barchart/_latestVersion)
 
 An Android library that lets you create a BarChartView in a simple flexible and easy way .
 
