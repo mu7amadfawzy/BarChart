@@ -86,7 +86,20 @@ chartView.drawChart(columnsModelList, rowsModelList);// rowsModelList of type ro
 ````
    chartView.drawChart(columnsModelList);// it's like with 0 x-coordinates number .
 ````
-
+## 3- Customize
+### Feel free to override any of these dimensions:
+````
+    <!-- defines the width of label of horizontal rows -->
+    <dimen name="row_label_width">@dimen/_20sdp</dimen>
+    <!-- defines the height of label of horizontal rows  -->
+    <dimen name="row_label_height">@dimen/_20sdp</dimen>
+    <!-- defines the height of of horizontal rows  -->
+    <dimen name="row_line_height">2dp</dimen>
+    <!-- defines the text size of both column and row labels -->
+    <dimen name="barTitle">@dimen/_12ssp</dimen>
+    <!-- defines width of the column (chart) -->
+    <dimen name="column_width">@dimen/_15sdp</dimen>
+````
 ### Happy Coding
 
 ## Authors
