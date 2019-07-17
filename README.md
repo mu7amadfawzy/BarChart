@@ -51,13 +51,8 @@ implementation  'com.widget.barchart:2+'
     app:x_line_color="@color/grey_300"/>
 
 ```
-#### You can use the default HeaderTV and ContentTV:
-
-##### ````exp_title```` sets the text of the headerTV .
-
 ### 2.2 Dynamically:
 
-#### In Java:
 #### BarChartModel constructors takes label and the percent needed
 ````
  public BarChartModel(String label, int percent) {
