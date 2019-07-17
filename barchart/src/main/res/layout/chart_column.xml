@@ -24,7 +24,7 @@
             android:orientation="vertical"
             bind:layout_marginEnd="@{model.barGap}"
             bind:layout_marginStart="@{model.barGap}">
-        <androidx.cardview.widget.CardView
+        <View
                 android:id="@+id/card_view"
                 android:layout_width="@dimen/column_width"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
 
         <TextView
                 android:id="@+id/title"
-                android:layout_width="@dimen/_30sdp"
+                android:layout_width="@dimen/column_label_width"
                 android:layout_height="@dimen/row_label_height"
                 android:gravity="center"
                 android:singleLine="true"
