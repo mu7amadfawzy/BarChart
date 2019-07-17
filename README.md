@@ -30,7 +30,7 @@ implementation  'com.widget.barchart:2+'
 ### 2.1 XML Layout:
 
  ```
- <com.widget.barchart.chart.BarChartView
+ <com.widget.chart.BarChartView
     android:id="@+id/chartView"
     android:layout_width="match_parent"
     android:layout_height="150dp"
