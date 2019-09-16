@@ -12,7 +12,7 @@ An Android library that lets you create a BarChartView in a simple flexible and 
 #### Using Gradle
 ```
 dependencies {
-implementation  'com.widget.barchart:2+'
+implementation  'com.widget:barchart:2+'
 }
 ```
 #### Using Maven
