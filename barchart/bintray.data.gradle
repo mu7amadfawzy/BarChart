@@ -1,0 +1,22 @@
+ext {
+    bintrayRepo = 'BarChart'          //the repo name in Bintray dashboard
+    bintrayName = 'com.widget.barchart'//the package name in Bintray repo
+    libraryName = 'barchart'           // the module name in the android studio project
+    //library name will be like -> publishedGroupId:artifact:libraryVersion
+    publishedGroupId = 'com.widget'             //the ID you want to add in the 'implementation line'
+    artifact = 'barChart'               //the artifact you want to add in the 'implementation line'
+    libraryVersion = '2.1.1'
+    libraryDescription = 'An Android library that lets you create ChartView in which you can set your bar and column numbers and manage colorsand gap between them in a simple and fast way.'
+
+    siteUrl = 'https://github.com/ma7madfawzy/BarChart'
+    gitUrl = 'https://github.com/ma7madfawzy/BarChart.git'
+
+
+    developerId = 'ma7madfawzy'
+    developerName = 'Mahmad fawzy'
+    developerEmail = 'ma7madfawzy@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 1.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-1.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
